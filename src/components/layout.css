@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+body {
+  font-family: 'Roboto Mono',
+    monospace;
+}
+
+h1 {
+  color: blue;
+  text-transform: capitalize;
+}
+
+p {
+  line-height: 2;
+}
+
+.blog-text {
+  color: red;
+  line-height: 1;
+}
+
+.products-text {
+  color: blue;
+  line-height: 3;
+}

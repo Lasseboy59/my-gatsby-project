@@ -13,6 +13,8 @@ module.exports = {
     person: { name: 'Peter', age: 35 }
   },
   plugins: [`gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

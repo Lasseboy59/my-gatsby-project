@@ -12,11 +12,12 @@ module.exports = {
     data: ['item 1', 'item 2'],
     person: { name: 'Peter', age: 35 }
   },
-  plugins: [
+  plugins: [`gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // add options here
+        name: `src/images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],

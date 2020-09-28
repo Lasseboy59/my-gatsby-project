@@ -1,12 +1,13 @@
 import React from 'react'
+import Layout from '../components/layout';
 import Header from '../examples/Header';
 
 const examples = () => {
   return (
-    <div>
-      <h1>hello from examples page</h1>
-      <Header />
-    </div>
+      <Layout>
+        <h1>hello from examples page</h1>
+        <Header />
+      </Layout>
   )
 }
 

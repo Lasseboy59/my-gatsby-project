@@ -22,12 +22,13 @@ const getImages = graphql`
 }
 `
 
-const images = () => {
+const Images = () => {
   return (
     <div>
       <section className="image">
         <article className="single-image">
           <h3>basic image</h3>
+          <img src={img} width="100%" />
         </article>
         <article className="single-image">
           <h3>fixed image/blur</h3>
@@ -40,4 +41,4 @@ const images = () => {
   )
 }
 
-export default images
+export default Images

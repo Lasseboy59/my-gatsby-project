@@ -1,21 +1,21 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import img from '../images/image_5.jpeg'
+import img from '../images/image-5.jpeg'
 import Image from 'gatsby-image'
 
 const getImages = graphql`
 {
-  fixed: file(relativePath: {eq: "image_3.jpeg"}) {
+  fixed: file(relativePath: {eq: "image-3.jpeg"}) {
     childImageSharp {
-      fixed(width: 300, height: 250) {
-        src
+      fixed(width: 200, grayscale: true) {
+        ...GatsbyImageSharpFixed
       }
     }
   }
-  fluid: file(relativePath: {eq: "image_5.jpeg"}) {
+  fluid: file(relativePath: {eq: "image-5.jpeg"}) {
     childImageSharp {
       fluid {
-        src
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
   }
@@ -23,6 +23,8 @@ const getImages = graphql`
 `
 
 const Images = () => {
+  const data = useStaticQuery(getImages)
+  console.log(data)
   return (
     <div>
       <section className="image">
@@ -32,9 +34,14 @@ const Images = () => {
         </article>
         <article className="single-image">
           <h3>fixed image/blur</h3>
+          <Image fixed={data.fixed.childImageSharp.fixed} />
         </article>
         <article className="single-image">
-          <h3>fixed image/svg</h3>
+          <h3>fluid image/svg</h3>
+          <Image fluid={data.fluid.childImageSharp.fluid} />
+          <div className="small">
+            <Image fluid={data.fluid.childImageSharp.fluid} />
+          </div>
         </article>
       </section>
     </div>

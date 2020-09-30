@@ -12,7 +12,7 @@ const ComponentName = ({ data }) => {
 
 export const query = graphql`
   {
-    product: contentfulProduct(slug: {eq: "sectional-soffa"}) {
+    product: contentfulProduct(slug: {eq: "sectional-sofa"}) {
       price
       title
     }
